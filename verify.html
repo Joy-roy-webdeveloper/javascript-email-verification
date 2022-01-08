@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sign up from</title>
+	<link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+
+	<style type="text/css">
+		body{
+background-image: url("1.jpeg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+		}
+		#sm{
+			width: 20rem;
+		}
+
+		.inp{
+			width: 50px;
+			height: 50px;
+			border-radius: 5px;
+			outline: none;
+			text-align: center;
+		}
+
+		#mtok{
+			margin-top: 60px!important;
+		}
+
+				#kon{
+			width: 70px;
+			background-color: tomato;
+			border-radius: 0px 1px 60px 0px;
+			height: 80px;
+		}
+
+		#im{
+			border-radius: 50px;
+		}
+				#kons{
+			width: 70px;
+			background-color: tomato;
+			border-radius: 60px 0px 1px 0px;
+			height: 80px;
+			float: right;
+		}
+	</style>    
+
+</head>
+<body>
+
+<div id="kon">
+	
+</div>
+
+<div class="container">
+	<center>
+		
+			<div class="mt-2" id="mtok">
+	            <img src="2.png" width="80px" id="im"><br>	<br>
+				<input type="text" name="" class="inp" id="one"> 
+				<input type="text" name="" class="inp" id="two"> 
+				<input type="text" name="" class="inp" id="three"> 
+				<input type="text" name="" class="inp" id="four">
+				<input type="text" name="" class="inp" id="five"><br><br>
+
+
+				<input type="submit" name="sub" id="sub" value="ok" class="btn btn-info p-2 font-weight-bold text-white">
+			</div>
+		
+	</center>
+</div>
+
+
+
+	<script type="text/javascript">
+
+let match = Math.floor(Math.random() * 101010) ;
+
+
+
+window.addEventListener("load",function(){
+	const params = (new URL(document.location)).searchParams;
+	console.log(params);
+
+    
+	 var email =params.get("email");
+
+	 console.log(email);
+
+	  Email.send({
+     Host : "smtp.gmail.com",
+     Username : "fiveerjoy@gmail.com",
+     Password : "oadaotzokyybvmyq",
+     To : email,
+     From : 'test@gmail.com',
+     Subject : "verifaction code",
+     Body : match
+ });
+
+
+
+
+
+
+
+});
+
+
+
+
+	document.getElementById('sub').addEventListener("click",function(){
+
+	const params = (new URL(document.location)).searchParams;
+	console.log(params);
+
+     var name =params.get("name");
+	 var email =params.get("email");
+	 var pass =params.get("pass");
+	 var conpass =params.get("conpass");
+
+
+
+     const one = document.getElementById('one').value;
+
+     const two =document.getElementById('two').value;
+
+     const three =document.getElementById('three').value;
+
+     const four =document.getElementById('four').value;
+
+     const five =document.getElementById('five').value;
+
+
+	 let newMatch = one+two+three+four+five;
+
+
+
+	 if (newMatch==match) {
+		swal({
+  title: "GOOD!",
+  text: "your mail is verified !",
+  icon: "success", //note you can write here error or warning or info 
+  button: "ok",
+});
+	 }else{
+
+	 			swal({
+  title: "something worng!",
+  text: "please enter valid code !",
+  icon: "warning", //note you can write here error or warning or info 
+  button: "ok",
+});
+	 }
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log(newMatch);
+console.log(name);
+console.log(email);
+console.log(pass);
+console.log(conpass);
+
+
+
+
+}); 
+
+	console.log(match);
+
+
+
+</script>
+
+</body>
+</html>

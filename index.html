@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sign up from</title>
+	<link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+
+	<style type="text/css">
+		body{
+			background-image: url("1.jpeg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+		}
+
+
+
+		#sm{
+			width: 20rem;
+		}
+		#name,#email,#pass,#conpass{
+			
+			height: 50px;
+			width: 500px !important;
+
+		}
+
+		#im{
+			border-radius: 50px;
+		}
+.ids{
+	background-color: black;
+	background-size: cover;
+
+}
+	
+	@media (max-width: 600px){
+		.ids{
+			background-color: black;
+			padding: 5px !important;
+		}
+
+				#name,#email,#pass,#conpass{
+			
+			height: 50px;
+			width: 350px !important;
+
+		}
+	}
+
+
+	@media (max-width: 768px){
+		.ids{
+			background-color: black;
+			padding: 0px !important;
+		}
+
+				#name,#email,#pass,#conpass{
+			
+			height: 50px;
+			width: 400px !important;
+
+		}
+	}
+
+
+@media (max-width: 480px){
+
+
+				#name,#email,#pass,#conpass{
+			
+			height: 50px;
+			width: 300px !important;
+
+		}
+	}
+   
+@media (min-width: 992px){
+		.ids{
+			background-color: black;
+			width: 700px
+
+		}
+
+	}
+
+	</style>
+
+	<div class="container" >
+		<center>
+			
+                <div class="ids p-5 mt-5">	
+				<img src="2.png" width="80px" id="im"><br>	<br>
+				<form action="verify.html" method="get">
+				<input type="text" name="name" id="name" placeholder=" your name" required="" class="p-2 form-control"><br>
+				<input type="email" name="email" id="email" placeholder=" your email" required="" class="p-2 form-control "><br>
+				<input type="text" name="pass" id="pass" placeholder=" your password" required="" class="p-2 form-control  "><br>
+				<input type="text" name="conpass" id="conpass" placeholder="confirm password" required="" class="p-2 form-control  "><br>
+				<input type="submit" name="sub" value="singup" class="btn btn-info font-weight-bold"
+				 id="conpasss" >
+			    </form>
+		</div>
+			</center>
+
+		</div>
+	
+
+<script type="">
+	
+
+
+
+let next = document.getElementById('conpasss');
+
+
+next.addEventListener("click",function(e){
+
+//e.preventDefault();
+
+let email = document.getElementById('email').value;
+let password = document.getElementById('pass').value;
+let name = document.getElementById('name').value;
+let conpassword = document.getElementById('conpass').value;
+
+console.log(email);
+
+
+
+
+
+
+
+
+if (email=='') {
+		swal({
+  title: "Email warning!",
+  text: "please enter your email !",
+  icon: "warning", //note you can write here error or warning or info 
+  button: "ok",
+})
+}else if(password==""){
+			swal({
+  title: "Password warning!",
+  text: "please enter your password  !",
+  icon: "warning", //note you can write here error or warning or info 
+  button: "ok",
+})
+}else if(password =="12345678"){
+		swal({
+  title: "normal password!",
+  text: "please provide a strong password !",
+  icon: "warning", //note you can write here error or warning or info 
+  button: "ok",
+})
+}else if(password.length<8){
+		swal({
+  title: "password issue!",
+  text: "password should be at last 8 charckter!",
+  icon: "warning", //note you can write here error or warning or info 
+  button: "ok",
+})	
+}
+else{
+		swal({
+  title: "Good job!",
+  text: "congratulation!",
+  icon: "success", //note you can write here error or warning or info 
+  button: "ok",
+})	
+}
+
+
+
+})
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
